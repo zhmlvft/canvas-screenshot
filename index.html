@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<title>网页截图&批注(10行代码搞定。支持平板touch)</title>
+	<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+	<script src="./js/jquery.jqscribble.js" type="text/javascript"></script>
+	<script src="./js/jqscribble.extrabrushes.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./js/html2canvas.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			html2canvas(document.body, {
+				  onrendered: function(canvas) {
+				    document.body.appendChild(canvas);
+				    $('#cont').hide();
+				    $("canvas").jqScribble({brushColor:'#f00',backgroundImage:canvas.toDataURL()});
+				  }
+			});			
+		});
+	</script>
+	<style>
+		body{padding:0px;margin:0px;}
+		canvas{-ms-touch-action: none; }//win8 平板ie10中必须加这行才能批注
+	</style>
+</head>
+<body>
+	<div style="height:auto;text-align:center" id="cont">
+		<div style="width:1024px;margin:auto;">
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+			<h1>网页截图&批注测试</h1>
+		</div>
+	</div>
+</body>
+</html>
